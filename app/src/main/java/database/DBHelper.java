@@ -76,6 +76,21 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return usernameList;
     }
+    public int deleteUser (String name){
+        SQLiteDatabase db =getReadableDatabase();
+        String select = UserMaster.User.COLUMN_NAME_USERNAME+" Like ?";
+        String [] selectionArgs = {name};
+
+        String[] selectArgs = {name};
+        int result = db.delete(UserMaster.User.TABLE_NAME,select,selectionArgs);
+
+        if (result > 0){
+            return 1;
+            }
+        else{
+            return -1;
+        }
+    }
 }
 
 

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void getAllUsers(){
         List usernames = db.readAllInfor();
         for (int i=0; i<usernames.size(); i++){
-            Log.i("All Users","user "+i+ " : "+ usernames.get(i));
+            Log.i("AAAA","user "+i+ " : "+ usernames.get(i));
         }
     }
 }
