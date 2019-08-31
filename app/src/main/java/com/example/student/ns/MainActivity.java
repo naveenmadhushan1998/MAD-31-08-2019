@@ -2,9 +2,12 @@ package com.example.student.ns;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
 
 import database.DBHelper;
 
@@ -35,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             Toast.makeText(getApplicationContext(),"Error in Adding User",Toast.LENGTH_LONG).show();
+        }
+    }
+    public void getAllUsers(){
+        List usernames = db.readAllInfor();
+        for (int i=0; i<usernames.size(); i++){
+            Log.i("All Users","user "+i+ " : "+ usernames.get(i));
         }
     }
 }
