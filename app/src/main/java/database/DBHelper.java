@@ -13,6 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "userinfor.db";
 
+
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -72,7 +73,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
             usernameList.add(username);
             passwordList.add(password);
-
+int
         }
         return usernameList;
     }
@@ -91,6 +92,19 @@ public class DBHelper extends SQLiteOpenHelper {
             return -1;
         }
     }
-}
+    public boolean updateUser (String username ,String pwd){
+        SQLiteDatabase db = getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(UserMaster.User.COLUMN_NAME_PASSWORD,pwd);
+        String select = UserMaster.User.COLUMN_NAME_USERNAME+" Like ?";
+        String [] selectionargs = {username};
+        int result = db.update(UserMaster.User.TABLE_NAME,values,select,selectionargs);
 
+        if (result > 0)
+            return true;
+        else
+            return false;
+    }
+}
+//Continued
 
