@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NS</string>
+    <string name="txt1">Username</string>
+    <string name="txt2">Password</string>
+    <string name="bnt1">SELECT ALL</string>
+    <string name="btn2">ADD</string>
+    <string name="btn3">DELETE</string>
+    <string name="btn4">UPDATE</string>
+    <string name="btn5">SIGN IN</string>
+</resources>
